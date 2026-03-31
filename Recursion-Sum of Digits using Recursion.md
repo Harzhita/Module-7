@@ -1,34 +1,33 @@
-# # 🔁 Recursion:Sum of Digits using Recursion in Python
+# 📐 Taylor Series Using Recursion in Python
 
 ## 🎯 AIM:
-To write a Python program to calculate the **sum of all digits** in a number using **recursion**.
+To write a Python program to evaluate a **Taylor Series** using **recursion**, where values of `x` and `n` are taken from the user.
 
 ## 🧠 ALGORITHM:
 
 1. **Start**
-2. Define a recursive function `sum_digit(n)` that:
-   - Returns 0 if `n <= 0` (Base Case)
-   - Else, returns `n % 10 + sum_digit(n // 10)` (Recursive Case)
-3. Take integer input from the user.
-4. Call the recursive function and store the result.
-5. Print the result.
+2. Create variables `x` and `n`
+3. Get values for `x` and `n` from the user
+4. Define a recursive function `series(x, n)`
+   - **Base case:** If `n == 0`, return 1
+   - **Recursive case:** Return `x**n / n + series(x, n-1)`
+5. Print the result
 6. **Stop**
 
 ## 💻 PROGRAM:
 ~~~
-def sum_digit(num):
-    if num < 0 or int(num) != num:
-        return 0
-    elif num == 0:
-        return 0
+def fun(x,n):
+    if(n==0):
+        return 1 
     else:
-        return (num % 10) + sum_digit(num//10)
-num= int(input())
-print(sum_digit(num))
+        return ((2**n)*(x**n)+fun(x,n-1))
+x=int(input())
+n=int(input())
+print(fun(x,n))
 ~~~
 
 ## OUTPUT
-<img width="467" height="220" alt="Screenshot 2025-09-08 085403" src="https://github.com/user-attachments/assets/6966fc70-cf5d-4722-8f75-20cf7a6682cb" />
+<img width="390" height="230" alt="image" src="https://github.com/user-attachments/assets/47cda7a1-6e33-4a39-be6f-1f9f2d152683" />
 
 
 ## RESULT
